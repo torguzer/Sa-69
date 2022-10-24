@@ -1,9 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Users from "./components/Users";
-import UserCreate from "./components/UserCreate";
-//import Signin from "./components/Signin";
+import Report from "./components/History";
+import ScholarCreate from "./components/ScholarCreate";
 
 export default function App() {
   return (
@@ -11,8 +10,8 @@ export default function App() {
       <div>
         <Navbar />
         <Routes>
-          <Route path="/Home" element={<Users />} />
-          <Route path="/create" element={<UserCreate />} />
+          <Route path="/ScholarHistory" element={<Report />} />
+          <Route path="/ScholarCreate" element={<ScholarCreate />} />
         </Routes>
       </div>
     </Router>

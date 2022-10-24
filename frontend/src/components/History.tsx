@@ -28,19 +28,19 @@ function Report() {
   const columns: GridColDef[] = [
     { field: "ID", headerName: "ลำดับ", width: 60 },
     {
-      field: "Student",
+      field: "StudentID",
       headerName: "นักศึกษา",
       width: 150,
       valueFormatter: (params) => params.value.ID,
     },
     {
-      field: "Schoolarship",
+      field: "ScholarshipID",
       headerName: "ทุนการศึกษา",
       width: 150,
       valueFormatter: (params) => params.value.ID,
     },
     {
-      field: "Reason",
+      field: "ReasonID",
       headerName: "เหตุผลที่ใช้ขอทุนกสชาศึกษา",
       width: 150,
       valueFormatter: (params) => params.value.ID,
@@ -69,7 +69,7 @@ function Report() {
               color="primary"
               gutterBottom
             >
-              ข้อมูลบันทึกการขอทุน
+              ข้อมูลการขอทุนการศึกษา
             </Typography>
           </Box>
           <Box>
@@ -84,14 +84,14 @@ function Report() {
             rowsPerPageOptions={[5]}
           />
         </div>
-          <Box>
+          <Box style={{display:"flex",justifyContent: "center"}}>
             <Button
               component={RouterLink}
-              to="/create"
+              to="/ScholarCreate"
               variant="contained"
               color="primary"
             >
-              สร้างรายการธุรกรรม
+              ขอทุนการศึกษา
             </Button>
           </Box>
       </Container>

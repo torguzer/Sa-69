@@ -33,7 +33,7 @@ func SetupDatabase() {
 		Email:      "Thirawat@gmail.com",
 		PersonalID: "1309902751836",
 		Gpa:        "3.00",
-		Major:      "cpe",
+		faculty:      "cpe",
 	}
 
 	db.Model(&Student{}).Create(&student)

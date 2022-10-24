@@ -28,7 +28,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-function UserCreate() {
+function ScholarCreate() {
   const { CreateReport,GetScholarship,GetReason,GetStudent } = useApi()
 
   //fetch data
@@ -101,7 +101,13 @@ function UserCreate() {
       ReasonInfo: (selectReport)
     } 
     console.log(data)
-    await CreateReport(data)
+
+    let res = await CreateReport(data);
+    if (res) {
+      setSuccess(true);
+    } else {
+      setError(true);
+    }
   }
 
 
@@ -245,7 +251,7 @@ function UserCreate() {
 
           <Grid item xs={6}>
             <FormControl fullWidth variant="filled" disabled>
-              <p>Major</p>
+              <p>Faculty</p>
               <TextField
                 id="Major"
                 variant="filled"
@@ -256,7 +262,7 @@ function UserCreate() {
             </FormControl>
           </Grid>
           <Grid item xs={12}>
-            <Button component={RouterLink} to="/Home" variant="contained">
+            <Button component={RouterLink} to="/ScholarHistory" variant="contained">
               Back
             </Button>
             <Button
@@ -266,7 +272,7 @@ function UserCreate() {
               color="primary"
             >
               Submit
-            </Button>gamil
+            </Button>
           </Grid>
         </Grid>
       </Paper>
@@ -274,4 +280,4 @@ function UserCreate() {
   );
 }
 
-export default UserCreate;
+export default ScholarCreate;

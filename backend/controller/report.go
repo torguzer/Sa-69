@@ -81,7 +81,7 @@ func GetReport(c *gin.Context) {
 // GET /repoets
 func ListReport(c *gin.Context) {
 	var reports []entity.Report
-	if err := entity.DB().Preload("Scholarship").Preload("Reason").Preload("Student").Raw("SELECT * FROM repoets").Find(&reports).Error; err != nil {
+	if err := entity.DB().Preload("Scholarship").Preload("Reason").Preload("Student").Raw("SELECT * FROM reports").Find(&reports).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

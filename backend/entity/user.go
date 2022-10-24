@@ -11,7 +11,7 @@ type Student struct {
 	Email      string `gorm: "uniqueIndex"`
 	PersonalID string `gorm: "uniqueIndex"`
 	Gpa        string	
-	Major      string
+	faculty      string
 }
 
 type Scholarship struct {

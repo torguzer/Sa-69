@@ -5,6 +5,6 @@ export interface StudentsInterface {
     PersonalID: string;
     Email: string;
     Gpa: string;
-    Major: string;
+    Faculty: string;
    }
    
